@@ -1,0 +1,219 @@
+Item 1 :
+Static Methods instead of Constructor For creating object .
+ 
+One advantage of static factory methods is that, unlike constructors, they
+have names
+A second advantage of static factory methods is that, unlike constructors,
+they are not required to create a new object each time they’re invoked.
+ 
+Classes that do this are said to be instance-controlled
+ 
+a.equals(b) if and only if a==b
+ 
+A third advantage of static factory methods is that, unlike constructors,
+they can return an object of any sub type of their return type.
+A fourth advantage of static factory methods is that they reduce the verbosity
+of creating parameterized type instances
+ 
+Disadvantages:
+               The main disadvantage of providing only static factory methods is that
+               classes without public or protected constructors cannot be subclassed.
+               A second disadvantage of static factory methods is that they are not
+               readily distinguishable from other static methods.
+ 
+Item 2 :
+Consider you have 10 properties of the object, out of this 10 properties 3 are required and other properties are optional. How will you design the class for this scenario.
+               telescoping constructor pattern
+                 JavaBeans Pattern  : not Thread safe
+               Builder pattern : Preferred
+the Builder pattern is a good choice when designing classes
+whose constructors or static factories would have more than a handful of
+parameters
+ 
+ 
+Item 3 :
+               a single-element enum type is the best way to implement a singleton  : Not Getting It
+               Need to explorer more
+Item 4:
+               How to make sure that Class Cannot be instantiated
+ 
+Item 5 : 
+               avoid creating unnecessary objects. Baby boomer example
+Item 6 :
+               Eliminate obsolete reference
+               When you do -- operation when you are executing the pop operation on stack.
+               You should nullify the reference in pop operation
+ 
+Item 7 : 
+                 Avoid finalizer
+ 
+Item 8 :
+                 Obey General Contract when over riding Equals method
+                               When to override Equals ?
+                              
+                              
+                              
+               Contract :  For non-null references for x y and others
+					Reflexive: x.equals(x)== true
+					Symmetric:x.equals(y)==y.equals(x)
+					Transitive:For x,y,z x.equals(y)==y.equals(z)==x.equals(z)
+					Consistent: multiple invocation of x.equals(y) will give the same result if x and y are not 	     changed.                             
+                     x.equals(null)==false	         
+                              
+               Performance Optimization:
+                              
+                              
+                              
+                              
+                              
+                              
+                              
+Item 9 :
+                              Always override the hashcode method if you have overriden equals .
+               Contract :
+                              
+                              
+                              
+               
+                              How to convert the hashtable to linked list  ?
+                              
+                              
+                              You must exclude any fields that are not used in equals comparisons.        
+                              Do not be tempted to exclude significant parts of an object from the hash
+                              code computation to improve performance.
+ 
+Item 10 :
+                              Always override toString
+                              
+                              
+ 
+Item 11 :
+                              OverRide Clone Judiciously
+                               
+ 
+Item 13 :
+                              Minimize the accessibility of classes and members
+                              Encapsulate as much as possible .
+ 
+Item 14 :
+                              In public classes, use accessor methods, not public fields
+                              
+                               
+ 
+Item 15 :
+                              Minimize mutability :
+                              Always make immutable class, make class mutable only if its you want to change the state of object.
+ 
+Item 16 :
+                              Composition vs Inheritance 
+                              If you are using Inheritance just for code reuse.
+                              Think again         because its a overhead. It will add all the methods which you don`t want use .
+                              
+                              If you are using Inheritance to maintain type hierarchy then its great.
+                              
+                              Composition and Inheritance both are getting used in CDI .
+                              
+                              when you use @Inject on variable Container will inject the instance of that particular class in variable . That injection is composition.
+                              
+                              Which one to inject is based on inheritance
+                              
+ 
+Item 17 : 
+                              Design and Document for inheritance or else prohibit it .
+ 
+Item 18 :                             
+                              Prefer interfaces to abstract classes .
+                              
+                              But never release half cooked interface , because if Client starts using it you cannot change it .
+                              
+Item 19 : 
+                              Use interfaces only to define types
+                              Never use the interface for Constants .
+ 
+Item 20 : Prefer Class Hierarchy /Inheritance to tagged class .
+ 
+Item 21 : Use function object to represent Strategies 
+                                Comparator Interface and compare method .
+                                Comparator object acts as function object.
+                              
+Item 22 :
+What is difference between the Static nested class and non static nested class ?
+When to use static nested class and non static nested class ?
+                               
+                               
+                              public class Hash {
+                              public int h=10;
+                              private  void length() {
+                              System.out.println("Hash:
+               }
+               public Entry getEntry(){
+                              return new Entry();
+               }
+               
+               public class Entry{
+                              
+                              
+                              }
+                              public Hash getHash(){
+                              return null;
+                              }
+               }
+               
+                              
+ 
+                               
+                              main(){
+                              
+                              Hash.Entry ent=hash.new Entry();  // ent will contain instance of Hash . Means if you call the methods of                                                                  hash                               
+                              }
+ 
+
+Item 23  : 
+    Don`t use raw type , Always use generics while writing code . Collection still supports it for backward compatibility .
+
+Item 24  : 
+	While Writing generic code you will get lots of errors and warnings . Eliminate all warnings before you push your code into production.
+
+Item 25 :
+	Prefer Lists 
+
+Item 26 :
+Item 27 :
+	Prefer generic types and Generic methods
+
+Item 28 : 
+	Use Bounded wild cards ;
+
+	Take a look at following example
+
+	 		public class Animal {}
+	 		public class Human extends Animal{}
+	 		public class Dog extends Animal {}
+
+	 		// Written as part of sdk
+	 		public interface AnimalOps {
+			public void addElements(List< ? super Animal> list);
+			public void processElements(List< ? extends Animal> list);
+			}
+
+			//Written by the team who is using your sdk 
+			public class DogOps implements AnimalOps {
+
+			@Override
+			public void addElements(List<? super Animal> list) {
+				
+				//Error can`t retrive only adding is possible 
+				for(Animal a: list){
+				}
+			}
+
+			@Override
+			public void processElements(List<? extends Animal> list) {
+
+				// can`t add only retival is possible.
+				list.add(new Human());
+						
+			}
+
+	
+}
