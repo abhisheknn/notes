@@ -217,3 +217,12 @@ Item 28 :
 
 	
 }
+Item 30 :
+
+	Use enums instead of int Enum pattern or String enum patterns
+	Why ? Because you can impose restriction on client to only accept one of the enum types.
+
+	You use enum as singleton class
+	you can add methods to the enum
+	you can have constructor in enum but its not accessible outside of enum. means you can access the public methods of enum by using enum constants.
+	Use enum on left side when comparing 
