@@ -256,5 +256,33 @@ Item 32 :
 
 	EnumSet is abstract class . The implemation is packge private : RegularEnumSet (For 64 enumconstants), JumboEnumSet (more than 64)
 	
-	You can create Enumset of same Enum type adding other type of enum constant will give comple time error .	
+	You can create Enumset of same Enum type adding other type of enum constant will give comple time error .
+	
+Item 33 :EnumMap
+	  you can only use enum constants as a key in EnumMap
+	  Cannot use null as a key
+	  Iterator behaves same as EnumSet .
+	  Iterators are weakly consistent, will never throw ConcurrentModificationException 
+
+Item 34 : Enum implement another interface
+Item 35 : Prefer annotation to namming patterns
+Item 36 : Consistently use Override annotation . 
+	  This will help when you thought you have overridden a method from parent class but actually you have overloaded it .
+	  
+	  class Animal{
+	  @Override
+	  public boolean equals(Animal a){      // will give compile time error
+	  
+	  }
+	  }
+Item 37 :
+	  Use marker interface to define type .
+	  Marker annotaion and marker interface have diffrent usage
+	  If you are using marker interface use it to define type.
+	  If you want to interfere some meaning out of the class use marking annotaion because later you can add attributes to annotaion .
+	  
+	  
+	  
+
+	
 
