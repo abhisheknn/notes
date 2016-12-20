@@ -281,8 +281,23 @@ Item 37 :
 	  If you are using marker interface use it to define type.
 	  If you want to interfere some meaning out of the class use marking annotaion because later you can add attributes to annotaion .
 	  
-	  
-	  
+Item 38 : 
+	 Check the validity of parameters
 
+Item 39 :
+	Make Defensive copy of mutables
+	//TODO
+
+Item 40 :
+	Choose method names carefully
+	Don’t go overboard in providing convenience methods
+	Avoid long parameter lists
+	Break the method up into multiple methods
+	Create helper classes to hold groups of parameters
+	Combines aspects of the first two is to adapt the Builder pattern
+	For parameter types, favor interfaces over classes
+	Prefer two-element enum types to boolean parameters
+		eg .public enum TemperatureScale { FAHRENHEIT, CELSIUS }  
+	
 	
 
