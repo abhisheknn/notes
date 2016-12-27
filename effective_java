@@ -299,5 +299,89 @@ Item 40 :
 	Prefer two-element enum types to boolean parameters
 		eg .public enum TemperatureScale { FAHRENHEIT, CELSIUS }  
 	
-	
+Item 42 : 
+	 Use varargs judiciously
+	 varagrs internally creates and initialize the array
+Item 43 :
+	Return empty arrays or collections, not nulls 
+	addition logic need to be added to handle the null condtion
+Item 44 : 
+	Write doc comments for all exposed API elements
 
+Item 45 :
+	Minimizing the scope of local variables
+	Declare the variable where it is used first .
+	Local variable should hae initializer.
+	To contain scope use for loop.
+	Keep method small and focused . Single Responsiblity Principal.
+Item 46 :
+	Use For-Each loop
+		// Can you spot the bug?
+	enum Suit { CLUB, DIAMOND, HEART, SPADE }
+	enum Rank { ACE, DEUCE, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT,
+	NINE, TEN, JACK, QUEEN, KING }
+	...
+	Collection<Suit> suits = Arrays.asList(Suit.values());
+	Collection<Rank> ranks = Arrays.asList(Rank.values());
+	List<Card> deck = new ArrayList<Card>();
+	for (Iterator<Suit> i = suits.iterator(); i.hasNext(); )
+	for (Iterator<Rank> j = ranks.iterator(); j.hasNext(); )
+	deck.add(new Card(i.next(), j.next()));
+
+	Using For-each loop
+	for (Suit suit : suits)
+	for (Rank rank : ranks)
+	deck.add(new Card(suit, rank));
+	
+	It lets you iterate over any object that implements the Iterable interface.
+	
+	Where you can`t use the For-Each loop?
+	Filtering 
+	Transforming
+	Parallel iteration
+	
+Item 47 : 
+	Know and use the libraries
+Item 48 :
+	Avoid float and double if exact answers are required
+Item 49 :
+	Prefer primitives to Boxed Primitives
+	
+	// Broken comparator - can you spot the flaw?
+	Comparator<Integer> naturalOrder = new Comparator<Integer>() {
+	public int compare(Integer first, Integer second) {
+	return first < second ? -1 : (first == second ? 0 : 1);
+	}
+	};
+	
+	public class Unbelievable {
+	static Integer i;
+	public static void main(String[] args) {
+	if (i == 42)    // NullPointerException
+	System.out.println("Unbelievable");
+	}
+	}
+	
+	// Hideously slow program! Can you spot the object creation?
+	public static void main(String[] args) {
+	Long sum = 0L;
+	for (long i = 0; i < Integer.MAX_VALUE; i++) {
+	sum += i;
+	}
+	System.out.println(sum);
+	}
+
+Item 50 :
+	Avoid Strings as keys 
+Item 51 :
+	Prefer StringBuilder#append to String Concatenation using '+'
+	
+Item 52 :
+	Refer to objects using interfaces. 
+	You can change the implementation.	
+Item 53 :
+	
+	
+	
+	
+	
