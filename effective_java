@@ -380,6 +380,42 @@ Item 52 :
 	Refer to objects using interfaces. 
 	You can change the implementation.	
 Item 53 :
+	Prefer interface to reflection
+	//TODO
+Item 54 :
+	Use native methods judiously
+Item 55 :
+	Optimize Judiously
+Item 56 :
+	Follow naming conventions
+Item 57 :	
+	Use Exception only for exceptional conditions
+	Don`t use it change the control flow
+Item 58 :
+	 Use Checked exceptions for recoverable condition and runtime exceptions for programming errors(ArryaIndexOutOfBound)
+	 Checked Exception : extends Exception : compiler Error 
+	 UncheckedException : RuntimeException
+Item 59 :
+	Avoid unnecessary ise of checked exceptions 
+Item 60 :
+	Favor the use of standard exceptions
+	Throw standard exceptions
+Item 61 :
+	Throw Exceptions appropriate to abstractions
+	Exception chaining: At higher level catch the LowerLevelException and wrap it in HigherLevelException and rethorw it
+Item 62 :
+	Document all exceptions thrown by each method
+	
+Item 63 : 
+	Include failure-capture information in detail messages
+Item 64 : 
+	Strive for failure atomicity
+	Object`s method while thowing the exception should preserver the state of object 
+	prior to occurance of exception . 
+Item 65 :
+	Don`t ignore exceptions
+	
+	
 	
 	
 	
