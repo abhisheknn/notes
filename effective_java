@@ -415,8 +415,29 @@ Item 64 :
 Item 65 :
 	Don`t ignore exceptions
 	
+Item 66 : 
+	Synchronize access to shared mutable data
+Item 67 :
+	Avoid excessive synchronization 
+	When in doubt don`t synchronize your method , Document that class is not thread safe
+	Don`t call any alien method from synchronized section 
 	
-	
+Item 68 :
+	Prefer executors and tasks to threads
+	Dont use threads directly 
+	use Executors for Threadpool
+Item 69 :
+	Prefer Concurency utilites
+Item 70 :
+	Documnet thread safety
+Item 71 :
+	Use lazy inititlization judiciously
+	//TODO
+Item 72 :
+	Don`t depend on thread scheduler
+	//TODO
+Item 73 :
+	Avoid Thread groups
 	
 	
 	
