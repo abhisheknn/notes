@@ -1,0 +1,22 @@
+New Number and Math Features
+New String Features
+Symbols
+Template literal
+variable and Scoping
+Destructing
+Parameter Handing 
+Arrow Function
+Classes
+New OOP features
+Modules
+Collections:
+	for-of loop
+	New Array Features
+	Maps and Sets
+	Typed Arrays
+	Iterables and Iterators
+	Generators
+Asynchronus Programming	
+Promises for Async Programming
+
+
