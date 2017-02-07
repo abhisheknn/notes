@@ -54,3 +54,52 @@ What is [[scope]]?
 Expain nested funnction ?
 what is scope chain?
 Expain closure in LexicalEnvironment context?
+Describe the global structure in browser ?
+Explain window object?
+Explain DOM,BOM and Javascript object ?
+Explain DOM tree ? What are DOM Nodes?
+Where document.documnentElement points to?
+Where document.body points to ?
+When the document.body is not available ?
+What happens when the element/node is not found in DOM ? What it returns?
+What all links are formed when you create a element in DOM? ChildNodes,firstChild,lastChild,parentNode,nextSibling,previousSibling
+When you add new elements to DOM using javascript do you have to create the links by yourself?
+What  is nodeType ? ELEMENT_NODE ,TEXT_NODE The most important ones are ELEMENT_NODE with number 1 and TEXT_NODE, which has number 3.
+What is nodeName ? When it can be lower case?
+What is innerHtml?
+What is nodeValue?
+What is diffrence between attribute and Properties? //TODO
+What is the diffrence between inheritance in JS and inheritance in java?
+Expain __proto__?
+what happens to "this" in case of inihritance?
+what happens if you call delete on the property of object and the property is not in the derived object nut in parent object ?
+Can you directly assign object to __proto__? Why you should not do it?
+why you should use object.create()?
+why should we use object.getPrototypeof(obj)?
+When we use prototype property? what is the connection between "new" ?
+What is the use of hasOwnProperty ?
+What are browser independent way of creating inheritance?
+for...in loop fetches the property of parent object as well ?
+What happens if you call toString on  obj ? var obj={}
+What is prototype chain?
+What happens when you add method to Array.prototype/Object.prototype?
+Why the built in properties and methods are not listed in (for ... in loop) ?
+How to inherit native objects ?
+What is constructor property?
+How instanceof operator works? obj.__proto__==F.prototype
+When instanceof lies ?
+How you call superclass constructor in ES5? function Rabbit(){Animal.apply(this,arguments);} ?
+How to overide a method in javascript inheritance? create a method with same name in prototype of child class 
+How to override a parent class method if you have already overiden the method? ParentClass.prototype.functionname.apply(this,arguments);
+Is there any way to make property protected ?
+How can you create a static property ?
+Exception handling in javascript?
+How can you get complete exception stack?
+If you have finally in your code and your code are returning from try block ? Will the finally block gets executed or not ?
+What happens if exception gets thrown in catch block?
+Explain setTimeout and setInterval ?
+How to cancle the setTimeout and setInterval execution? clearTimeout(timerid) clearInterval(intervalid)
+How the setInterval behaves when the function execution takes more time than the specified delay between two function calls ?
+Explain the single threadness of javascript ?
+What actually happens when you call setTimeout(function(){},0) ?
+
