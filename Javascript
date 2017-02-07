@@ -1,3 +1,13 @@
-http://www.w3schools.com 
+Use of 'use strict' http://www.w3schools.com/js/js_strict.asp
+this keyword in ES5 and ES6 :  variants of this http://javascript.info/tutorial/this
+Inheritance in javascript ES5 and ES6
+Getters and setters in javascript object or class 
+Need of calling super() from the contructor of subclass unlike java javascript doesnot explicitly add call to super constuctor .
+   It gives "Uncaught ReferenceError: this is not defined" Error.
+Type of function invocation . 
+What is IIFE and where we use it ?
+How to check the variable is array or not ?
+Closure in javascript 
+
 
  
