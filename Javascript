@@ -7,7 +7,50 @@ Need of calling super() from the contructor of subclass unlike java javascript d
 Type of function invocation . 
 What is IIFE and where we use it ?
 How to check the variable is array or not ?
-Closure in javascript 
-
-
- 
+Closure in javascript.
+What is LexicalEnvironment?
+What is Scope chain?
+How to iterate over all the properties of object?
+How to check if property is exist or not in Object or not ?
+Diffrent ways to create object in java?
+What is diffrence between function declaration and function expression ?
+what is anonymous function?
+Why it is recommended that you should declare and define all the variable values at the top of function?
+What is variable hoisting ?
+what is function hoisting ?
+Function hoisting in relation with fucntion declaration and function expression ?
+When to use javascript self executing function IIFE ?
+Why to use bracakets for function body in IIFE?
+Is it necessary to wrap the IIFE in brackets what is other way to do it?
+How many bytes the Number take internally ? Numbers internally represented as?
+what is result of 1/0 in javascript ?
+What is NaN ?  What is possible condition for which output can be NaN?
+What is typeof NaN?
+How to convert numeric String to number ?
+Is javascript is pass by value or pass by reference ? What happens when object is passed?
+What is diffrence between push / pop and shift / unshift methods for array?
+What is use of splice method ? What if you pass index which is greater than the last index of array?
+How to convert the array to String and String to array?
+How length of array works?
+What does delete operator do?
+What is diffrence between Splice and slice?
+How does sort method works?How to sort array of numbers?
+Why toString method is used ? What happens when it is not present in object?
+var a=[1,2,3] ;+a= ?? a+"" =??
+When numeric converion is applied?
+alert(['X']=='X') => true why ?
+What are the rules of boolean conversion?
+if(new Boolean(false)){alert(true)} what is the o/p?
+{} and [] in if block evaluates to what ?
+Types of converions in javascript?
+Explain call method ?
+Explain apply method?
+what is diffrence between call and apply method?
+How instanceof works?
+What actually happens in function hoisting and variable hoisting ?
+Explain LexicalEnvironment ?
+What happens when variable is created inside function ?
+What is [[scope]]?
+Expain nested funnction ?
+what is scope chain?
+Expain closure in LexicalEnvironment context?
