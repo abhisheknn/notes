@@ -1,0 +1,102 @@
+What are microservices ?
+small, autonomous services/code that works together .
+Small and focused on doing one thing well 	
+	Single Responsibility principle.
+	Write cohesive code. 
+	Something that could be rewriten in two weeks
+	These services need to be able to change independently of each other, and be
+	deployed by themselves without requiring consumers to change.
+Key Benefits :
+	Technology Heterogeneity
+	Resilience
+	Scaling: With a large, monolithic service, we have to scale everything together.	
+	Ease of Deployment
+	Organizational Alignment
+	Optimizing for Replaceability
+
+Other Decompostional techniques:
+	Shared Libs
+	Modules : //TODO
+
+
+
+Architect :
+	Zoning : Integration Architect , Will give advice on how the zones should interact with each other.
+				"be worried about what happens between the boxes, and be liberal in what happens inside "
+	Coding  Architect: Imapct of decision, pair programming is Good start .
+	Principles:
+	practices :
+			One person’s principles are another’s practices
+
+
+
+How to Model a service ?
+	Loose coupling
+	High cohesion
+	The bounded context : Each bounded context have the explicit interface and external world talks to these interfaces.
+	Shared and hidden Models: Between the Inventory Dept service and Finance Dept service The stock items are the shared model and this 						  services are responsible for many other hidden models.
+							  Model with same name can have different meaning in diffrent contexts.
+	Modules and Services : 
+						 Start with monolith Service 
+						 Keep the service Bounded context Moduler , So now in your monolith service you have many bounded contexts as modules.
+						 Once you know the domain properly break you modules in services.
+	Premature Decomposition: 								  
+						Prematurely decomposing a system into microservices
+						can be costly, especially if you are new to the domain
+	Business capabilities:
+						Its not just the data/model we share between Bounded contexts , we also share the capabilities to change the model.
+	Turtles All the Way Down :
+						one Top level bounded contexts can contain many bounded context. This inner bounded context have no idea that its a part of its parent . Eg . warehouse can have inventory and order fullfilment.
+
+	
+
+Integration :
+	How?
+	Avoid breaking Changes.
+	Keep your APIs Technology Agnostic
+	Make your service simple for consumer.
+	Hide internal implemantation details of service
+	Interfacing with consumers:
+		The shared database :Good bye loose coupling
+		Synchronous vs asyn 
+		Orchestration vs choreography : REST(sync) vs event based(publish subcriber)
+		REST and HTTP
+		Hypermedia as the Engine for appliaation state
+		Downside of REST over HTTP
+		ASYNC technology choices:
+		Services as State machine
+		Reactive Extensions
+		DRY and code resuse in microservices : Best is serve the reusable code /functaionlity as a service
+											 don’t violate DRY within a microservice, but be relaxed
+											 about violating DRY across all services.	
+		Client Libraries : are good but we need to make sure that we can upgrade the service independent of client version and Consumer can upgrade the client independetnt of service.
+		Access by reference : Email service
+		Versioning:
+		Defer It for as Long as Possible. Don`t change
+		Catch Breaking Changes Early
+		Use Semantic Versioning MAJOR.MINOR.PATCH
+		Coexist Different Endpoints
+		Use Multiple Concurrent Service Versions
+ 	User Interfaces
+ 		Constraints
+ 		API composition
+ 			1) UI is separate layer which consumes data from diffrent services.
+ 			2) Move UI to service and and service will serve both front end and backend. 
+ 			3 Backends for frontends each type of frontend will have its own backend service.
+ 	Integrating with Third-Party Software:
+ 			COTS and SAAS
+ 			Should I buy or should I build ?
+ 				Lack of Control 
+ 				Customization
+ 			Best create the wrapper around the COTS and SAAS 
+ 				eg For CMS , create your own frontend and backend , Integrate backend with CMS solution.
+ 				Create Facades over big COTS solutions . 
+ 					This Facades will act as bounded contexts.
+ 			The Strangler Pattern :
+ 				Using strangler you capture and intercept calls to the old system.
+
+
+
+
+
+
