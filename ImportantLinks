@@ -1,3 +1,4 @@
 no main manifest attribute : http://roufid.com/no-main-manifest-attribute-in-app-jar/ 
 JWT best practices : https://dev.to/neilmadden/7-best-practices-for-json-web-tokens 
 Create a commit build : https://getintodevops.com/blog/building-your-first-docker-image-with-jenkins-2-guide-for-developers
+Run the karma tests in phantomjs :https://stackoverflow.com/questions/46405196/angular-cli-how-to-run-tests-with-a-headless-browser
