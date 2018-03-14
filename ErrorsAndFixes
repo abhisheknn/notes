@@ -1,0 +1,8 @@
+###error
+[ERROR] npm ERR! code EPERM
+[ERROR] npm ERR! errno -4048
+[ERROR] npm ERR! syscall scandir
+[ERROR] npm ERR! Error: EPERM: operation not permitted
+
+###fix 
+	npm cache verify
