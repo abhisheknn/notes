@@ -273,4 +273,42 @@ Stop listening for messages posted to the given channels
 # Redis Cluster  [Working on it]
 https://redis.io/topics/cluster-tutorial 
 
+What you get :
+	High availablity  : 
+	Data Shrading : Data is spread across multiple nodes 
+
+Redis Ports:
+	Allow firewall access to Any client port + 10000 (used by Redis cluster bus to communicate with other nodes)
+
+Redis Data Shrading:
+	Every key is part of hash slots 
+	Node contains hash slots
+	Hash slot for give key is computed by CRC16 Modulo 16384
+	You can force multiple keys to be part of the same hash slot by using a concept called hash tags.
+
+Redis Cluster master-slave model
+	suggested Cluster setup : A,B,C Master nodes A1,B1,C1 are slave nodes 6 node cluster .
+	Hash Slots are disributed among masters.
+	B fails B1 gets pormoted as master .
+	But Both B and B1 fails cluster stops working . 
+
+Redis Cluster consistency guarantees
+	Strong consistency is not possible
+
+	client writes to Master B
+	Master B returns ok
+	Master B triggers replication on B1 B2 B3 .
+	if master waits for B1,B2,B3 ack it will be performance overhead
+
+Redis Cluster configuration parameters
+
+	cluster-enabled
+	cluster-config-file :read only  client can`t use this
+	cluster-node-timeout :If a master node is not reachable for more than the specified amount of time, it will be failed over by its slaves.
+	cluster-slave-validity-factor
+	cluster-migration-barrier
+	cluster-require-full-coverage
+	 
+
+
 
