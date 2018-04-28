@@ -6,3 +6,12 @@
 
 ###fix 
 	npm cache verify
+
+
+#error
+Error loading config file: /home/orion/.docker/config.json - open /home/orion/.docker/config.json: permission denied
+Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get http://%2Fvar%2Frun%2Fdocker.sock/v1.37/containers/json: dial unix /var/run/docker.sock: connect: permission denied
+
+#fix:
+sudo gpasswd -a $USER docker
+sudo setfacl -m user:username:rw /var/run/docker.sock
