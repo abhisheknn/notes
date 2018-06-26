@@ -15,3 +15,12 @@ Got permission denied while trying to connect to the Docker daemon socket at uni
 #fix:
 sudo gpasswd -a $USER docker
 sudo setfacl -m user:username:rw /var/run/docker.sock
+
+
+###error
+
+For Kubernetes :
+The connection to the server 10.0.2.15:6443 was refused - did you specify the right host or port?
+
+###fix :
+sudo swapoff -a
