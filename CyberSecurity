@@ -1,0 +1,102 @@
+Seoul framework for Data Protection
+Nation Intitute of Standard and Technology
+
+
+NIST framework :
+	
+	
+	
+ For an organization that is starting up its security program,
+ there are some key actions required to take advantage of the Cybersecurity Framework.
+ 
+ 1)The first is to identify the key business outcomes.
+ 2)Then understand the threats and vulnerabilities to those outcomes.
+ 3)Create a profile. 
+ 4)Conduct a risk assessment.
+ 5)Decide on the target profile. 
+ 6)Determine, analyze and prioritize the gaps to create the action plan. 
+ 7)And establish and execute a program to implement the plan.
+ 
+ Cybersecurity is, at its heart, the management of risk related to internet-connected businesses. 
+ This includes the threats, the vulnerabilities of IT systems, and the attack countermeasures.
+ 
+ Standard approach :
+ National Institute of Standards and Technology 800-30, Guide for Conducting Risk Assessments.
+ ISO 27005, Information Security Risk Management publication.
+ 
+ It's useful to have a source of threat intelligence to support threat analysis. 
+ VERIS provides an open community threat database which can be used to support risk analysis.
+ ThreatStream offers an open source cyber threat intelligence blog, which reports on contemporary activities and threat actors.
+ 
+ Control objetives for IT :
+ From a cyber security perspective, there are two key processes for security, APO13, 
+ Manage Security in the Plan group, and DSS05, Manage Security Services in the Deliver group.
+ 
+ Manage Security:
+ The process description is Define, operate, and monitor a system for information security management. 
+ And it has five goals, Support IT and business compliance, Support the management of IT and enterprise risk,
+ Contribute to the transparency of IT costs and benefits, Ensure the security of information, infrastructure, and applications, and Provide reliable
+ information for decision making.
+ 
+ There are seven operational security controller objectives in DSS05. 
+ 1) Protect against malware.
+  These include: Anti-virus, Security patching, Security information awareness and in contemporary terms, cyberthreat intelligence,
+  Change management, Security filtering of email and web traffic, and Security training.
+  
+ 2) Manage network and connectivity security. 
+     Establishing and enforcing Policy on network connections
+     Enforcement of Password entry,
+     The configuration and use of Firewalls and intrusion detection systems
+     Network security protocols and communications encryption, 
+     Network configuration, 
+     Security mechanisms to ensure trusted transmission and receipt
+     Network security control testing
+     penetration testing.
+
+   
+3)  Network segregation. 
+    Manage endpoint security covers the security of laptops, desktops, servers, mobile devices, and network equipment. 
+    It requires that controls are in place to ensure the endpoints are securely configured. 
+    Hardened to remove unnecessary ports and protocols and that Remote access is managed.
+	
+4)  Manage user identity and logical access.  
+    Identities are managed from creation to removal. 
+    Access rights are established and maintained inline with the roles and responsibilities of the organization.
+    Access to systems and information is authorized and authenticated.
+      Privileged access is strictly controlled and that access rights are regularly reviewed, 
+      Appropriate Audit trails of access are kept. 
+	
+5)  Management of physical access to IT assets.
+      Perimeter protection such as fences, doors, and locks, 
+    Intruder detection systems, access controls for data centers and office spaces, Identity cards, and Visitor management procedures.
+    Increasingly the use of Cloud based infrastructure is reducing the effort required to manage this area.
+
+6)	But increasing the dependence on and the oversight of, third party security.
+      Managing sensitive documents is an increasingly important aspect of security as the focus of protective measures 
+      shrinks from the perimeter to the information itself. 
+      With employees taking laptops out of the enterprise and sending data out to mobile devices perimeter security devices such as corporate 
+      firewalls no longer protect enterprise information. New techniques such as Digital rights management and mobile data encryption need to be employed.
+      This process also includes information in device-centric controls such as password or pin control printing and pin codes on mobile devices. 
+
+7)  The last, but by no means least, of the control objectives in the deliver manage securities services group is monitor 
+    the infrastructure for security-related events. 
+	  This provides the detective controls that are needed to identify security breaches should the enterprise's preventative controls fail. 
+	  This control objective includes the operation of Intrusion detection and prevention assistance, Logging and alerting security related events,
+	  operating Log management and Security information and event monitoring systems, delivering Security incidents to the incident management process,
+	  carrying out Forensics, and Managing evidence.
+
+   These are all key activities for a Cybersecurity operation center.
+
+ Cyber Essentials :
+ The UK government has created a low-cost, light-touch scheme called Cyber Essentials 
+   
+   
+   
+Cyber kill Chain :
+The cyber kill chain views an attack in seven stages: 
+reconnaissance, weaponization, delivery, exploitation, installation, command and control, and action. 
+
+ Reconnaissance : finding out about a target  IP address scan and port scan  .
+ Malware weaponization :  it's customized to a specific target or group of targets .
+ Delivery : The most common way of delivering malware is to embed it in a document, PDF, image, or other electronic item in a way that when it's opened it will self-install. 
+ Exploitation : the infected item will exploit a vulnerability in the target software post delivery when the document is opened.
