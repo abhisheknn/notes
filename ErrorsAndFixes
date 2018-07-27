@@ -24,3 +24,11 @@ The connection to the server 10.0.2.15:6443 was refused - did you specify the ri
 
 ###fix :
 sudo swapoff -a
+
+
+
+### error 
+For spotify docker build plugin on windows
+
+###fix
+“Expose daemon to tcp://localhost:2375 without TLS”
