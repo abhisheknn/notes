@@ -1,0 +1,38 @@
+
+ 
+1)vertical vs horizontal scaling
+2)CAP Theorem: ACID vs BASE and CAP: https://www.dummies.com/programming/big-data/hadoop/acid-versus-base-data-stores/
+3) ACID vs BASE: ACID vs BASE and CAP: https://www.dummies.com/programming/big-data/hadoop/acid-versus-base-data-stores/
+4) partitioning & sharding: consistent hashing
+optimistic vs pessimistic Locking: https://docs.jboss.org/jbossas/docs/Server_Configuration_Guide/4/html/TransactionJTA_Overview-Pessimistic_and_optimistic_locking.html
+5)Relational database vs NOSQL
+6)Type of NoSQL:
+key value
+wide column
+document based database
+graph-based database
+
+7)Caching
+8)A data center, Racks, host
+9)Cpu /memory /hard drive/network bandwidth
+10)Random(slower) and sequential
+11)Http vs http2 vs WebSocket
+12)TCP/IP model
+13)ipv4 vs ipv6
+14)TCP vs UDP
+13)DNS lookup
+15)https vs TLS
+16)public key infrastructure & certificate Authority
+17)Symmetric vs asymmetric key Encryption
+18)Load balancer -> L4 vs L7
+19)CDN & Edge
+20)Bloom Filters & count-min sketch
+21)PoXos - consensus over distributed host
+22)Design patterns
+23)Containers
+24)Kafka pub-sub queue
+25)Map reduce
+26)Multithreading
+27)Concurency
+28)locks
+29)synchronization
