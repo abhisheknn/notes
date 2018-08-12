@@ -1,0 +1,221 @@
+singleton https://dzone.com/articles/java-singletons-using-enum
+
+
+##Singleton bean :
+@Singleton on class you want to make singleton
+@Inject on another class
+
+Intansiated lazily created on first use.
+Bean that is intansiated on startup : egarly intansiated singleton bean   @Startup to @Singleton class
+Logic to excute after bean creation : @PostConstruct
+
+Bean creation chaining :
+
+Bean A should be created before Bean B 
+
+
+@DependsOn("A")
+@Startup
+@Singleton 
+class B{}
+
+@Startup
+@Singleton
+class A{}
+
+Thread Safe by default
+
+JavaEE provides two type of concurrency :
+Container managed concurrency .
+Bean managed Concurrency   @ConcurrencyManagment on class
+	@Lock(LockType.WRITE)(doesn`t allow concurrent access) @AccessTimeout  and  @Lock(LockType.READ) (allows concurrent access) on methods . 
+	
+	
+	
+	
+##Observer Pattern :
+
+@Observer 
+javax.enterprise.event.Event
+
+
+Fire Customer Event:
+
+@Inject 
+private Event<Customer> addCustomerEvent;
+
+onAdd(){
+addCustomerEvent.fire(customer);
+}
+
+
+Observers customer event :
+
+@Observes 
+
+
+
+scenario:
+
+restendpoint to create a customer:
+ when the customer is created 
+	following service will get called:
+		Email service 
+			in Email service 
+			
+			sendMail(@Observes Customer customer){
+			}
+		
+now if you want to add SMSService no need to change create customer endpoint.
+
+
+
+Observer Exception breaks the chain 
+all observers listing to event will run in non sequntial manner.
+you can add priority to observers
+@Priority
+Lowest value first .
+
+			sendAddMail(@Observes @Priority(100) Customer customer){
+			}
+
+
+If you add delete :
+
+onDelete(){
+customerEvent.fire(customer);
+}
+			
+			
+How the observer will distinguish if it is add or delete event ?
+@Qualifier
+
+create a qualifier which will accept two values : ADD and REMOVE
+create two events :
+
+@Inject @CustomerEvent(ADD)
+customerAddEvent
+
+@Inject @CustomerEvent(REMOVE)
+customerRemoveEvent
+
+
+		sendAddMail(@Observes @CustomerEvent(ADD) @Priority(100) Customer customer){
+			}
+
+		sendDeleteMail(@Observes @CustomerEvent(REMOVE) @Priority(100) Customer customer){
+			}
+
+
+##Async Observer
+Priority will not work with Async Observer
+customerAddEvent.fireAsync(customer);
+@ObserveAsync
+
+How to decide the thread pool which you can use ?
+NotificationOptions.ofExecutor(new ForkJoinPool(10));
+
+CompletionStage<Customer> stage =customerAddEvent.fireAsync(customer);
+stage.handle((Customer customer,Throwable ex)->{
+
+});
+
+
+
+##Decorator Pattern :
+
+Wrap the target object 
+Dynamically add a behavior at runtime 
+
+@Decorator
+@Delegate
+
+@Decorator
+class Implement the interface which you want to decorate
+@Any
+@Delegate
+@Inject the object of type Interface
+
+
+##Dependency Injection :
+
+
+Inverion of control
+Loosly coupled
+change the place where the object is created and inject in bean when needed
+Container maintain the lifecycle of ibjected object 
+@Inject -> field ,constructor or method
+can be injected into Managed bean 
+Injectable object must conform following requirement :
+ Should not be a ineer class
+ should not be a non-abstract class
+ should not be annotated decorator
+ should not be annotated Vetoed
+ constructor should be present
+ 
+IF there are more than one implementation of injectable type . How the container will know which one to inject ?
+@Qualifier 
+
+
+
+
+
+## Filter Design Pattern:
+
+implement the javax.servlet.Filter interface
+doFilter()
+intercpets the http request and response
+Filter can be chained 
+chain.doFilter(httpRequest,response);
+
+
+@WebFilter(filterName="authentication",urlPatterns="/admins/*",serveletNames="AdminRequestHandler",initParams={@WebInitParam(name="user",value="admin")})
+ 
+ 
+response.sendRedirect("/admin-login.html");
+
+If there are two filters for a servlet which will get excuted first ?
+
+you have to specify it in web.xml , the filters will get executed in the order it is defined.
+
+
+## The Interceptor Pattern :
+## AOP : Aspect Oriented Programming :
+
+Cross cutting concerns .
+
+Logging Example :
+Intercepts every method call
+Log out method name and parameter values
+Log method and execution time
+
+@Interceptor
+@Transactional
+class XXXX{
+
+@AroundInkove    // will only invoke method calls
+method (InvocationContext ic){
+// before method call
+
+Object returnVal=ic.proceed();
+
+// after method call
+
+return rerturnVal;
+}
+}
+
+
+
+@Interceptors(XXXX.class) on the other class 
+
+@AroundConstructor
+do
+
+
+
+Database Centric Architecture
+Domain Centric Architecture
+Screaming Architecture
+CQRS Architecture
+Monolith vs Microservices Architecture
