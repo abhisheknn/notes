@@ -43,3 +43,18 @@ For spotify docker build plugin on windows
 ./kafka-console-producer.sh --broker-list localhost:9092 --topic test
 ./kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --from-beginning
 
+
+### spring actuator endpoints are returning 404
+###fix
+management:
+ security: 
+   enabled: false
+ endpoints: 
+  enabled-by-default: true
+  web:
+   exposure:
+    include: "*" 
+    
+    
+    
+
