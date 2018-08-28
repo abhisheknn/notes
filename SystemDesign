@@ -41,6 +41,7 @@ graph-based database
 
 
 Bloom Filters & One Hit wonder :
+--------------------------------
 Akamai's web servers use Bloom filters to prevent "one-hit-wonders" from being stored in its disk caches.
 One-hit-wonders are web objects requested by users just once, something that Akamai found applied to nearly
 three-quarters of their caching infrastructure. Using a Bloom filter to detect the second request for a web object and 
@@ -48,3 +49,45 @@ caching that object only on its second request prevents one-hit wonders from ent
 significantly reducing disk workload and increasing disk cache hit rates.
 
 
+Lets say I work for Google, in the Chrome team, and I want to add a feature to the browser which notifies the user
+if the url he has entered is a malicious URL. So I have a dataset of about 1 million malicious URLs, 
+the size of this file being around 25MB. Since the size is quite big, (big in comparison to the size of the browser itself),
+I store this data on a remote server.
+Case 1 : I use a hash function with a hash table. I decide on an efficient hashing function, 
+-------
+and run all the 1 million urls through the hashing function to get hash keys.
+I then make a hash table (an array), where the hash key would give me the index to place that URL.
+So now once I have hashed and filled the hashing table, I check its size. 
+I have stored all 1 million URLs in the hash table along with their keys. So the size is at least 25 MB.
+This hash table, due to its size will be stored on a remote server. When a user comes along and enters a URL in the address bar, 
+I need to check if it malicious. Thus I run the URL through the hash function (the browser itself can do this) and
+I get a hash key for that URL. I now have to make a request to my remote server with that hash key,
+to check the if the particular URL in my hash table with that particular key, is the same as what the user has entered.
+If yes then it is malicious and if no then it is not malicious. 
+Thus every time the user enters a URL, a request to the remote server has to be made to check if it is a malicious URL. 
+This would take a lot of time and thus make my browser slow.
+Case 2 : I use a bloom filter. The entire list of 1 million URLs are run through the bloom filter using multiple hash
+------
+functions and the respective positions are marked as 1, in a huge array of 0s. Let's say we want a false positive rate of 1%, 
+using a bloom filter calculator (http://hur.st/bloomfilter?n=1000000&p=0.01) , 
+we get the size of the bloom filter required as only 1.13 MB. 
+This small size is expected as, even though the size of the array is huge,
+we are only storing 1s or 0s and not the URLs as in case of the hash table.
+This array can be treated as a bit array. That is, since we have only two values 1 and 0, 
+we can set individual bits instead of bytes. This would reduce the space taken by 8 times. This 1.13 MB bloom filter, 
+due to its small size, can be stored in the web browser itself !! Thus when a user comes along and enters a URL, 
+we simply apply the required hash functions (in the browser itself), and
+check all the positions in the bloom filter (which is stored in the browser).
+A value of 0 in any of the positions tells us that this URL is DEFINITELY NOT in the list of malicious
+URLs and the user can proceed freely. Thus we did not make a call to the server and hence saved time. 
+A value of 1 tells us that the URL MIGHT be in the list of malicious URLs.
+In these cases we make a call to the remote server and over there we can use some other hash function with some 
+hash table as in the first case to retrieve and check if the URL is actually present. Since most of the times, 
+a URL is not likely to be a malicious one, the small bloom filter in the browser figures that out and hence saves time
+by avoiding calls to the remote server. Only in some cases, if the bloom filter tells us that the URL MIGHT be malicious, 
+only in those cases we make a call to the server. That 'MIGHT' is 99% right.
+
+So by using a small bloom filter in the browser, we have saved a lot of time as we do not need to make server calls
+for every URL entered.
+
+We can see that hash table with a single hash function is used for a different purpose altogether than a bloom filter. 
