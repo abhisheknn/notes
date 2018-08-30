@@ -3,7 +3,7 @@
 1)vertical vs horizontal scaling
 2)CAP Theorem: ACID vs BASE and CAP: https://www.dummies.com/programming/big-data/hadoop/acid-versus-base-data-stores/
 3) ACID vs BASE: ACID vs BASE and CAP: https://www.dummies.com/programming/big-data/hadoop/acid-versus-base-data-stores/
-4) partitioning & sharding: consistent hashing  https://www.youtube.com/watch?v=zaRkONvyGr8
+4) Hashing : consistent hashing  https://www.youtube.com/watch?v=zaRkONvyGr8   & https://www.hackerearth.com/practice/data-structures/hash-tables/basics-of-hash-tables/tutorial/
 optimistic vs pessimistic Locking: https://docs.jboss.org/jbossas/docs/Server_Configuration_Guide/4/html/TransactionJTA_Overview-Pessimistic_and_optimistic_locking.html
 5)Relational database vs NOSQL
 6)Type of NoSQL:
