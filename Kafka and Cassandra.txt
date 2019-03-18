@@ -1,0 +1,206 @@
+https://kafka.apache.org/documentation/#security
+http://kafka.apache.org/documentation/#intro_guarantees
+http://kafka.apache.org/documentation/#kafka_mq
+
+Kafka Uses sendfile : https://developer.ibm.com/articles/j-zerocopy/
+Use batch compression
+push vs pull ?
+
+How at most once works in kafka ?
+How at least once workes in kafka ?
+How exactly once works in kafka ?
+How replication works in kafka ?
+
+How to achive multi tenancy in kafka ?
+
+What is topic ?
+How data in a stored in topic ?
+What is log in kafka?
+Explain the kafka as messaging system ?
+What is log compaction ?
+	ensures that log contains at least the last known value of for specific key 
+	If you want to get database like feature not stream
+	All the current consumer don`t get to see the updated results ,
+	All the new comsuers will see only on key 
+	Does not change offset 
+	Deleted records can be seen by consumer delete.retention.ms default 24 
+	
+
+Kafka Streams :  https://www.oreilly.com/library/view/apache-kafka-series/9781789343496/
+
+What is Kafka Stream ?
+What is Kafka Stream Topology ?
+How to create a kafka Sream processing application ?
+What is stateful vs stateless processing in kafka stream ?
+What is diffrence between Kstream and Ktable ?
+What is the use of Map anf map value functions?
+What is the use of Flatmapvalue and flatmap functions ?
+What is the use of Branch ?
+Wha do you mean marked for repartition ?
+
+
+
+
+Join
+window
+
+
+Kafka Connect  : https://www.oreilly.com/library/view/apache-kafka-series/9781789344738/
+
+
+
+
+
+
+Cassandra :
+
+Why cassandra need all the partition key columns in where clause ?
+Why Allow filtering is required in some queries ? https://www.datastax.com/dev/blog/allow-filtering-explained-2
+Why should you use token function ? https://stackoverflow.com/questions/39839133/understanding-the-token-function-in-cassandra
+How to achive pagination in cassandra ?
+Why it is necessary to present the clustering column in order ?
+Which of the following is invalid query ? Why ?
+
+1)	SELECT * FROM numberOfRequests
+    WHERE cluster = ‘cluster1’
+    AND date = ‘2015-06-05’
+    AND datacenter = 'US_WEST_COAST'
+    AND hour= 12
+    AND minute >= 0 AND minute <= 30;
+2)  SELECT * FROM numberOfRequests
+    WHERE cluster = ‘cluster1’
+    AND date = ‘2015-06-05’
+    AND datacenter > 'US';
+3) 	SELECT * FROM numberOfRequests
+    WHERE cluster = ‘cluster1’
+    AND date = ‘2015-06-05’
+    AND datacenter = 'US_WEST_COAST'
+    AND hour >= 12 AND minute = 0;
+What all restictons are there in where clause ?
+What is Data modeling ?
+	Analyze requirement 
+	Identify entities and relationships
+	Identity queries
+	Identity keyspaces,tabel 
+	Identify the type of columns
+	
+How to data model ?
+Queries are the king of data modeling ? 
+Diffrence between the RDBMS and cassandra data modeling ?
+      RDBMS                        Cassandra
+Data->Model->Application	Application->Model->Data
+Entities are king			Queries are king 
+Primary key uniqueness      Primary keys used as partition keys
+ACID						CAP theorem
+Joins and indexes 			Denormalization
+
+
+
+What is ACID Transaction?
+Atomic     : commit and rollback
+Consistent : Data should be in consistent state after transaction 
+Isolate    : Transaction do not interfere with each other
+Durable	   : Completed transaction persist	
+
+Cassandra supports ACD for writes to individual rows
+What is Tunnable Consistency ?
+Cassandra is AP database .
+Cassandra does not supports joins , so Denormalize as mush as you can . But don`t over do it .
+What is referential integrity ?
+What is keyspace ?
+What is class in keyspace ?
+What is COPY command ?
+how to generate uuid and current timeuuid  ?
+uuid() and timeuuid ()
+How to import CSVs into table ?
+How to delete all rows from table ? truncate table1;
+How truncate command works ?
+What if one of the nodes are down whrn you hit truncate command ?
+What if you drop the column which is part of primary key ?
+Can you execute the more than one cql at once ? Use SOURCE './script.cql'
+What is data model ? way of organizing data 
+What is key space ? tables will be in keysapce 
+What is primary key ? primary key also contains clustering columns
+What is Partition key ?
+What is clustering column?
+What is consistent hashing?
+What is simple primary key ?
+How the fetch and store in multi value partition key works ?
+What is the diffrence between PRIMARY KEY((id)) and PRIMARY KEY((year),title)?
+Clustering column is used for sorting ? Default is acsending . You can specify the descending.
+How to make the table dec ? ORDER BY (DESC)
+You always should use partition key in Where clause .
+you can use range query on clustering column .
+The order of keys should be preserved ?
+What are the collections available in cassandra ?
+What are the UDTs ?
+Why we shoul use UDTs ?
+What are the counters ? Where it can be used ?
+Can you insert in counter columns ? no
+What is the defalut value of counter columns ? 0
+How many counter columns are possible in table ? 1
+Counters cannot be indexed 
+----------------
+What are user defined Function ?          needs a lot of practice 
+What are user defined aggregates ?        needs a lot of practice
+http://christopher-batey.blogspot.com/2015/05/cassandra-aggregates-min-max-avg-group.html
+
+
+insert into cyclist_alt_stats (birthday,height,id,lastname,nationality,weight) values(dateof(now()),'14',uuid(),'da','usa','100');
+
+select * from cyclist_alt_stats
+
+
+
+create or replace function lastname_grouped_by_nationality(group map<text,frozen<list<text>>>,lastname text, nationality text)
+called on null input
+returns map<text,frozen<list<text>>>
+language java
+as 'if(null==group) return group ; List<String> lastnames= group.get(nationality); if(null==lastnames){lastnames= new ArrayList();group.put(nationality,lastnames);} lastnames.add(lastname);   return group;' ;
+
+create or replace aggregate lastname_grouped_by_nationality_agg(text,text)
+SFUNC lastname_grouped_by_nationality
+STYPE map<text,frozen<list<text>>>
+INITCOND {}
+
+
+select lastname_grouped_by_nationality_agg(lastname,nationality) from cyclist_alt_stats
+
+
+
+select  lastname_grouped_by_nationality (null,lastname,nationality) from cyclist_alt_stats
+
+#Get uniquie nationality 
+
+create or replace function unique_nationality(nationalities set<text> ,nationality text)
+called on null input
+returns set<text>
+language java
+as 'if(null==nationalities) return nationalities; nationalities.add(nationality); return nationalities;';
+
+create or replace aggregate unique_nationality_agg(text)
+sfunc unique_nationality
+stype set<text>
+initcond {}
+
+
+select unique_nationality_agg(nationality) from cyclist_alt_stats 
+
+
+
+
+Come up with Conceptual Data model for youtube , netflix and Security .
+Application Workflow
+Come up with logical model in Chebotko Diagram Notation
+Chebotko Diagram : https://academy.datastax.com/units/logical-chebotko-diagrams 
+----------------
+
+What are anti patterns in cassndra data modeling ? https://academy.datastax.com/units/22024-data-model-anti-patterns-practical-application-data-modeling-apache-cassandra
+Join on write 
+How to implement Change Data Capture in Cassandra https://issues.apache.org/jira/browse/CASSANDRA-8844 ?
+https://docs.lenses.io/2.1/connectors/source/cassandra-cdc.html 
+
+	 
+	
+	
+	
