@@ -25,6 +25,8 @@ What is log compaction ?
 	Does not change offset 
 	Deleted records can be seen by consumer delete.retention.ms default 24 
 	
+How Transaction works in kafka ?
+
 
 Kafka Streams :  https://www.oreilly.com/library/view/apache-kafka-series/9781789343496/
 
@@ -37,17 +39,72 @@ What is the use of Map anf map value functions?
 What is the use of Flatmapvalue and flatmap functions ?
 What is the use of Branch ?
 Wha do you mean marked for repartition ?
+What is KTable and KStream Duality ?
+
+-----------------------
+What is KGroupedStream ?
+What is KgroupedTable  ?
+What is KGroupedStream Aggregate?       Need to practice 
+What is KgroupedStream Reduce   ?       Need to practice
+----------------------
+
+
+
+What is Exactly once in kafka ?    https://hevodata.com/blog/kafka-exactly-once/
+Data processing on message happens exactly once 
+Pushing the message to kafka happns exactly once.
+How Producers achive it ?
+When producr starts PID gets assigned to producer and a seq no which .
+When producer sends the msg to kafka , kafka veries the producer and seq no .
+The seq no is incremented sequentialy , is excalty one number greater than prev seq no .
+If the network failuer happens and ask producer to send the same msg again kafka will send the same msg with same seq no .
+As kafka knows that msg with this seq no is already consumed it will discard the msg.
+Producers PID gets changed if producer restarts . so Idempotency promised for excatly once producer session .
+Property :
+
+How Consumers dose it ?
+
+How Stream does it ?
+
+What is diffrence between GlobalKTable and KTable ?
 
 
 
 
 Join
+
+For the KStream-KStream join, is depend on the timestamps of the record if they join or not. 
+details: https://www.confluent.io/blog/crossing-streams-joins-apache-kafka/
+
+
+Inner Kstream-KStream join       Windowed : gives data from left and right if key is presnt in both and with in specified window.
+Left  Kstream-KStream join       left joins on right , all left data if right not present null is set ,
+							     if right got the key which is already in left 
+outer Kstream-KStream join       windowed  all the data from left and right and if not in window add null to right or left
+
+Inner KTable-KTable join 	     Matched Data in both table	
+Left  KTable-KTable join 	     Data in left table if not matched right set to null + common data 
+							     if left gets data and not matched in right right sets to null ,
+							     if right gets data and not matched in left do nothing	
+outer KTable-KTable join         Data from both tables not matched set left or right to null .
+								
+
+Inner Kstream-KTable join        if stream gets data : if key is present table it will match and store in result stream
+							     if table gets data : ignored till stream gets 	
+Left Kstream-KTable join 		 All the data from stream if not present in table set to null
+
+Inner Kstream-GlobalKTable join  GlobalKtable is loaded before hand  All the data common to both Stream and GlobalKTable
+									
+Left Kstream-GlobalKTable join   All the data from Left if not present at that time in GlobalKtable Set right will set to null.  
+
+
 window
 
 
 Kafka Connect  : https://www.oreilly.com/library/view/apache-kafka-series/9781789344738/
 
 
+Kafka Stream Test : https://github.com/confluentinc/kafka-streams-examples
 
 
 
