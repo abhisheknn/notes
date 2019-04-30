@@ -67,8 +67,8 @@ How Consumers dose it ?
 How Stream does it ?
 
 What is diffrence between GlobalKTable and KTable ?
-
-
+KTable is sharded across all running instance of Ktable .
+GlobalKTable is loaded before hand in each running instance .
 
 
 Join
