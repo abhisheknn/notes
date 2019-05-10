@@ -26,6 +26,15 @@ What is log compaction ?
 	Deleted records can be seen by consumer delete.retention.ms default 24 
 	
 How Transaction works in kafka ?
+       1) consumer and producer and streams should have the "transaction.id" as part of config 
+       2) .initTransactions();
+       3) .beginTransaction();
+       4) .commitTransaction();
+      
+    Consumer should have isolation.level as read.commited   
+    transaction-cordinator and transaction log (Internal kafka topic)
+    Uses 2phase commit . 
+    There should be only one producer with tranaction id .	 	       
 
 
 Kafka Streams :  https://www.oreilly.com/library/view/apache-kafka-series/9781789343496/
