@@ -10,6 +10,7 @@ How at most once works in kafka ?
 How at least once workes in kafka ?
 How exactly once works in kafka ?
 How replication works in kafka ?
+https://www.youtube.com/watch?v=WscozkoXLHM
 
 How to achive multi tenancy in kafka ?
 
