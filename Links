@@ -10,3 +10,6 @@ Install java and mvn : https://www.vultr.com/docs/how-to-install-apache-maven-on
                         for mvn add follwoing lines to . /etc/profile .
                                     export M2_HOME=/opt/maven
                                     export PATH=${M2_HOME}/bin:${PATH}
+
+Run Cassandra on Docker:
+https://gokhanatil.com/2018/02/build-a-cassandra-cluster-on-docker.html
