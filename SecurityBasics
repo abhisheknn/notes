@@ -53,6 +53,141 @@ Block Chiper
 
 Public key Cryptography 
 
+What is penetration testing ?
+What is Risk Assesment ?
+
+
+Reports of vunlenariblities found and how to solve them .
+Scope of the testing 
+
+Footprinting : Recon process of target computersystem .
+Wayback machine : https://archive.org/
+
+DNS information : https://www.arin.net/
+whois <sitename>/<ipaddress>
+dig <sitename>
+
+Finding Network Ranges 
+host <sitename>
+whois <ipfromabovecommand>
+
+Using google for recon : Google hacking 
+https://www.exploit-db.com/google-hacking-database 
+
+
+OSI nd TCP/IP model
+Wireshark
+
+DHCP servers and clients : Assign Ips to clients
+
+
+Cyptography :
+
+Caesar Chiper
+Enigma Chiper
+
+DES
+Tripple DES
+AES
+
+
+openssl 
+
+To generate Private Key:
+openssl genrsa -aes128  -out privatekey 4096
+
+To Generate Public Key 
+openssl rsa -in privatekey -pubout -out publickey
+
+To Encrypt the message/file :
+openssl rsautl -encrypt -pubin -inkey publickey  -in input.txt -out encypted.txt
+
+To Decrypt the file :
+openssl rsautl -decrypt -inkey privatekey -in encypted.txt -out plain.txt
+
+
+Certificates :
+What are certificates ?
+What is the diffrence between SSL and TLS ?
+What are the version of TLS ?
+
+openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365
+
+
+Hashing :
+
+MD5 : md5sum 
+SHA 
+
+Passwords are stored as sha
+
+
+You might know that SSL/TLS certificates work on public key infrastructure (PKI). 
+It means that they’re issued by authorized entities known as “certificate authorities.” 
+A certificate authority is supposed to sign an SSL certificate when it issues it, to make it legitimate. 
+Here, a certificate authority signs the hash of the certificate rather than the entire certificate, as it’s much more convenient. 
+This signature works as a cryptographic proof that a trusted certificate authority issues the certificate, and nobody has tampered with it.
+
+As the certificate has been converted into a hash, the smallest of change in it will cause the entire hash to change. 
+This, in turn, will cause the signature to change. The browser will compare this changed signature to the original signature 
+and will terminate the certificate as invalid.
+
+Thus, hashing algorithms carry the responsibility of legitimizing an SSL certificate. 
+
+
+Scaning
+sslscan <sitename>
+port scaning 
+vulnerablity scaning 
+network scaning 
+
+IDS : intrussion detection system 
+Packeth
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
