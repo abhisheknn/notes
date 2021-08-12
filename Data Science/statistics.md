@@ -16,5 +16,5 @@ What is Inferential Statistics ?
 https://arockialiborious.com/f/descriptive-vs-inferential-statistics. 
 
 Levels of measurement ?  
-Quantitive and Qualitative data. 
+Quantitive and Qualitative data.   
 https://www.questionpro.com/blog/nominal-ordinal-interval-ratio/. 
