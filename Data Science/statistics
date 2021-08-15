@@ -18,3 +18,83 @@ https://arockialiborious.com/f/descriptive-vs-inferential-statistics.
 Levels of measurement ?  
 Quantitive and Qualitative data.   
 https://www.questionpro.com/blog/nominal-ordinal-interval-ratio/. 
+
+
+Sampling: way of deciding the indivduals 
+
+Why we need sample :
+part of the population 
+infrential statistics 
+Cannot measure the whole population becaue its impractical
+
+Sampling frame :
+list of individual from which sample is collected 
+prat of the population from which you have to draw the population from 
+
+Undercoverage :
+ommiting some individuals from sampling frame 
+
+Samping Error :
+population mean is diffrent than sample mean 
+population % will be diffent that sample %
+
+Non Sampling Errors:
+bad list
+sloppy data collection 
+
+Simulation :
+Representation of real world pheomenon
+
+
+Types of sampling : 
+1) Simple Random Sampling
+-Subest of population selected from the sample have equal chance iof getting selected
+-in the popualtion of 100 if we take sample of 5 student based on some charactistics 
+-similar sample group will be picked each time .
+
+Method:
+-Assign unique no to individual 
+-Randomaly select the one from the list 
+
+limits: 
+-partial list 
+-invalid list 
+
+2) Stratified Random Sampling 
+-list is divided in groups 
+-divide by layers
+-divide the population in subgroup based on same characteristics 
+-then run SRS on stratum
+limit:
+-oversampling
+-need a list before hand
+
+3) Systematic Sampling
+-Array of individuals in any order
+-start at random point
+-take the kth individual, repeat
+limit : 
+-What is peroridicity is there ?
+
+4) Cluster Sampling  
+-Geographic
+-map is devided
+-Baised
+limit :
+-same geographic area have same type of people  
+
+5) Convenince Sampling ;
+ -low risk circumstances
+ -good for studies like which ice cream is best
+ -raidily available data 
+limit :
+ -bias in every group
+ -miss important population
+
+6) Multistage Sampling 
+-include any of above smapling techniqueue multipletimes
+
+ex:
+cluster-> SRS -> Startified -> Startified -> SRS 
+
+
