@@ -1,3 +1,6 @@
+Source : https://youtu.be/xxpc-HPKN28
+
+
 What is Statistics ?  
 Statistics is the study and manipulation of data, including ways to gather, review, analyze, and draw conclusions from data.  
 
@@ -68,6 +71,8 @@ limits:
 limit:
 -oversampling
 -need a list before hand
+https://en.wikipedia.org/wiki/Stratified_randomization#/media/File:StratifiedRandomSampling.jpg
+
 
 3) Systematic Sampling
 -Array of individuals in any order
@@ -96,5 +101,100 @@ limit :
 
 ex:
 cluster-> SRS -> Startified -> Startified -> SRS 
+
+
+Guideline for planing a statistical Study :
+-state the hypothesis 
+-Identify the individual of interest
+-Specify the variable to measure 
+-determine population or sample 
+-if Sample -> choose sampling method
+-Ethical concerns
+-collect data
+-use descriptive or infrential statistics to answer your hypothesis
+-Note your observations/concerns about your data collection or analysis
+-Make recommendation for future studies 
+
+Census : whole population 
+Sample : PArt of Population 
+
+Experiment Vs Observational Study 
+
+Experiment : 
+Some treatment/ intevation (Asked to do something) , Exeperiment on individual Variable 
+
+Observation:
+no Experiment , just obsrvation of variable .
+
+Replication :
+Studies must be done properly so anyone can replicted .
+
+Avoiding Bias in Survery Design 
+- minimize bias
+
+Non Response and Voluntary Response
+
+Truthfulness of Response
+-recall Bias : people will forget after sometime 
+-too personal /awkward ques
+
+Hidden Bias
+-Question wording may including certain reponse 
+-Order of question
+-Scales of question may not accurately meausre response 
+
+Influnce of Interview 
+Vague wording 
+
+Lurking Variable 
+-varible thatis associated with a condition but may not cause that condition 
+ Ex: people with the tattoo more likely to meet with accident
+- people with same intelligence and education level deos not make same amout of money 
+lurking variable : Sex , Race 
+
+Randomization :
+- is used to assign individual to treatment group 
+- A completely Randomize Experience
+
+Placebo Effect
+-Contol Group 
+
+Blocked Randomization 
+-Group the individual in block 
+-then add intervention with in group 
+
+Blinding :
+individual should not know in which group he blongs to 
+
+Double Binding :
+Both Staff and participant do not know about treatment assignment .
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
