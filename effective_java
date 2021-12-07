@@ -20,6 +20,11 @@ Disadvantages:
                classes without public or protected constructors cannot be subclassed.
                A second disadvantage of static factory methods is that they are not
                readily distinguishable from other static methods.
+	       
+	       
+	       How it works in multithreaded appliaction ?
+	       https://stackoverflow.com/questions/25354112/instance-controlled-classes-and-multithreading
+	       
  
 Item 2 :
 Consider you have 10 properties of the object, out of this 10 properties 3 are required and other properties are optional. How will you design the class for this scenario.
