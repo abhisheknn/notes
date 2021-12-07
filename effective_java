@@ -24,6 +24,7 @@ Disadvantages:
 	       
 	       How it works in multithreaded appliaction ?
 	       https://stackoverflow.com/questions/25354112/instance-controlled-classes-and-multithreading
+	       https://stackoverflow.com/questions/11165852/java-singleton-and-synchronization
 	       
  
 Item 2 :
