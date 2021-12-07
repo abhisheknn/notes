@@ -38,8 +38,18 @@ parameters
  
  
 Item 3 :
-               a single-element enum type is the best way to implement a singleton  : Not Getting It
-               Need to explorer more
+               a single-element enum type is the best way to implement a singleton  : 
+	       	How to make the class singleton?
+		what will happen if two thread calls the method at once ?
+		What will happnen if you have to Serialize and De-serialize ?
+
+		so just before you deseralize some one chnage the value in the singletone object ?
+		https://docs.oracle.com/javase/7/docs/platform/serialization/spec/input.html#5903
+
+		when to use enum to make the singleton objects ?
+		https://dzone.com/articles/java-singletons-using-enum
+
+	       
 Item 4:
                How to make sure that Class Cannot be instantiated
  
