@@ -1,5 +1,19 @@
 Too much Technical debts are bad
 Use functional programming , its easy to debug small functions as function will output same data for same input
 You’ve got to start with the customer experience and work back toward the technology — not the other way around user experince is important .
+Follow well known coding standards, so that new developer onboarding will be easy . Make a stylesheet and share across the company .
+Spend time thinking about code. Number of lines don’t dictate how simple the problem is or complex. A code that is clean is beautiful  : Learn Clean code
+Code refactoring : 
+          Test Coverage is important 
+          Use Test Driven Development approach
+          Avoid the temptation to rewrite everything
+          Make incremental changes
+          Ensure existing tests passes
+          New technology is insufficient reason to refactor
+          Always leave the code cleaner than you have found, if not don’t make it messy
+Code Reusal is useful because of Code Duplication. It may not be always fruitful to remove code duplication.
+Always leave the code you are editing better than you have found it .
+Always question your assumptions, wear the hat of fellow developer and think differently. Never blame others, try to fix the problem.
+Always look for tools that might ease your software development. Try to get the best out of your current tool, there might be some hidden features that you are unaware of
 
 
