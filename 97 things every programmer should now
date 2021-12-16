@@ -15,5 +15,5 @@ Code Reusal is useful because of Code Duplication. It may not be always fruitful
 Always leave the code you are editing better than you have found it .
 Always question your assumptions, wear the hat of fellow developer and think differently. Never blame others, try to fix the problem.
 Always look for tools that might ease your software development. Try to get the best out of your current tool, there might be some hidden features that you are unaware of
-
+The ratio of time spent reading (code) versus writing is well over 10 to 1 therefore making it easy to read makes it easier to write.
 
