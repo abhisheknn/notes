@@ -16,4 +16,24 @@ Always leave the code you are editing better than you have found it .
 Always question your assumptions, wear the hat of fellow developer and think differently. Never blame others, try to fix the problem.
 Always look for tools that might ease your software development. Try to get the best out of your current tool, there might be some hidden features that you are unaware of
 The ratio of time spent reading (code) versus writing is well over 10 to 1 therefore making it easy to read makes it easier to write.
+Developing Software is an artwork, it resonates the craftsmanship of the developer. Design code properly .
+We don’t have to spend much time making layout beautiful, explore the powerful IDE and use auto-formatter and use design patterns .
+Code Review is important , review it yourslef before raicing code review . Run Static Code Analysis.
+          
+          Avoid using goto statements, as they make remote sections highly interdependent.
+          Avoid using modifiable global variables, as they make all sections that use them dependent.
+          Each variable should have the smallest possible scope. For example, a local object can be declared right before its first usage.
+          Make objects immutable whenever relevant.
+          Make the code readable by using spacing, both horizontal and vertical. For example, aligning related structures and using an empty line to separate two sections.
+          Make the self-documenting code by choosing descriptive (but relatively short) names for objects, types, functions, etc.
+          Avoid nested section, if you need one, make it a function.
+          Make your functions short and focused on a single task. The old 24-line limit still applies. Although screen size and resolution have changed, nothing has changed in human cognition since the 1960s.
+          Functions should have few parameters (four is a good upper bound). This does not restrict the data communicated to functions: Grouping related parameters into a single object benefits from object invariants and saves reasoning, such as their coherence and consistency.
+          More generally, each unit of code, from a block to a library, should have a narrow interface. Less communication reduces the reasoning required. This means that getters that return internal state are a liability — don’t ask an object for information to work with. Instead, ask the object to do the work with the information it already has. In other words, encapsulation is all — and only — about narrow interfaces.
+          In order to preserve class invariants, usage of setters should be discouraged, as setters tend to allow invariants that govern an object’s state to be broken.
+Good code is its own best documentation. As you’re about to add a comment, ask yourself, ‘How can I improve the code so that this comment isn’t needed?’ Improve the code and then document it to make it even clearer.
+Code is dynamic, it changes often. But, comments are slower to change. Comment become STALE very quickly
+Continuous learning : Don’t try to be a Dinosaur programmer. It will lead to extinction.
+
+
 
